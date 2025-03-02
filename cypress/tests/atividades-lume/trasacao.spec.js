@@ -15,7 +15,7 @@ describe('Atividade 2 LumeStack', () => {
 
     });
     
-    it.only('Deve enviar dinheiro com saldo insuficiente', () => {
+    it('Deve enviar dinheiro com saldo insuficiente', () => {
         
         cy.visit('')
         cy.get("[type='text']").type('TesteQA')
@@ -24,7 +24,9 @@ describe('Atividade 2 LumeStack', () => {
         cy.get("[href='/transaction/new']").click()
         cy.get("[type='text']").type('Mendes')
         cy.get('.css-13s1204-MuiTypography-root').eq(10).click()
-        cy.get("[data-test='sidenav-user-balance']").invoke('text').then((text) => {
+        cy.get("[data-test='sidenav-user-balance']")
+        .invoke('text')
+        .then((text) => {
           // Remover caracteres indesejados e converter para número
           const saldo = parseFloat(text.replace(/[^0-9.-]+/g, ''));
       
@@ -36,7 +38,7 @@ describe('Atividade 2 LumeStack', () => {
           } else {
             cy.log("Saldo insuficiente. Nenhuma ação foi realizada.")
           }
-        });
+        })
         
       
 

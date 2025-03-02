@@ -4,7 +4,7 @@ describe('Exercicio 1 LumeStack', () => {
     
     it('Deve fazer login com um usuário válido', () => {
       
-      cy.visit('http://localhost:3000/')
+      cy.visit('')
       cy.get("[type='text']").type('mendesqa')
       cy.get("[type='password']").type('12345')
       cy.get("[type='submit']").click()
@@ -14,7 +14,7 @@ describe('Exercicio 1 LumeStack', () => {
     
     it('Deve exibir uma mensagem de erro ao fazer login com credenciais inválidas', () => {
       
-      cy.visit('http://localhost:3000/')
+      cy.visit('')
       cy.get("[type='text']").type('teste')
       cy.get("[type='password']").type('teste')
       cy.get("[type='submit']").click()
@@ -24,7 +24,7 @@ describe('Exercicio 1 LumeStack', () => {
 
     it('Deve registrar um novo usuário com informações válidas', () => {
         
-        cy.visit('http://localhost:3000/')
+        cy.visit('')
         cy.get("[href='/signup']").click()
         cy.get("[name='firstName']").type('Teste')
         cy.get("[name='lastName']").type('QA')
@@ -37,7 +37,7 @@ describe('Exercicio 1 LumeStack', () => {
 
     it('Deve exibir mensagens de erro ao tentar registrar um novo usuário sem preencher todas as informações obrigatórias', () => {
        
-        cy.visit('http://localhost:3000/')
+        cy.visit('')
         cy.get("[href='/signup']").click()
         cy.get("[name='firstName']").type('Teste')
         cy.get("[name='lastName']").type('QA')
